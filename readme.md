@@ -8,7 +8,7 @@
 # 推荐学习路线（按顺序）
 1. 熟悉回顾基础的HTML+CSS+JS, 重点回顾理解HTML的DOM结构，CSS的盒子模型，这些知识网上许多资源，这是我之前略微总结的blog，可以稍微看下：https://www.jianshu.com/p/b06a7deedcb0
 2. Bootstrap4，重点熟悉CSS3中的弹性盒子概念，Bootstrap4做了一层封装，项目中用的比较多，这里可以直接看Bootstrap4的官方文档
-3. React可以跟着它官网的上手项目[九宫格](https://reactjs.org/tutorial/tutorial.html)做完，推荐自己在本地搭建开发环境进行。另外强烈推荐阅读React设计的一些[最佳实践经验]（https://zh-hans.reactjs.org/docs/thinking-in-react.html#gatsby-focus-wrapper）
+3. React可以跟着它官网的上手项目[九宫格](https://reactjs.org/tutorial/tutorial.html)做完，推荐自己在本地搭建开发环境进行。另外强烈推荐阅读React设计的一些[最佳实践经验](https://zh-hans.reactjs.org/docs/thinking-in-react.html#gatsby-focus-wrapper)
 
 # Little project
 ## 介绍
