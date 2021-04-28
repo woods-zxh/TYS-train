@@ -6,9 +6,13 @@ import DialogPanel from './DialogPanel'
 
 function App() {
   return (
-    <div className="App">
-        <NavigationBar />
-        <DialogPanel />
+    <div className="App d-flex flex-column">
+        <div className="p-2">
+          <NavigationBar />
+        </div>
+        <div className="p-2 flex-grow-1">
+          <DialogPanel />
+        </div>
     </div>
   );
 }
