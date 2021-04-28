@@ -1,9 +1,9 @@
 import React from 'react';
-import './Navigation.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import './Navigation.css';
 
-export interface NaviProp {
+export interface NaviProps {
     name: string;
     num: number;
     isSelected: boolean;
@@ -24,10 +24,12 @@ class NavigationBar extends React.Component {
     }
 
     reset() {
+        // Todo: reset the page
         console.log("reset");
     }
 
     render() {
+        // Todo: auto render all the steps
         return (
             <div>
                 <div className="naviButton">
@@ -48,9 +50,10 @@ class NavigationBar extends React.Component {
 
 }
 
-class StepLabel extends React.Component<NaviProp, {}> {
+class StepLabel extends React.Component<NaviProps, {}> {
     render() {
         if(this.props.isSelected)
+            // Todo: change style when selected
             return (
                 <div className="stepSelected">
                     <div className="stepNumSelected">{this.props.num}</div>
