@@ -29,7 +29,8 @@ class DialogPanel extends React.Component<{}, DialogState> {
         "test2",
         "test3",
         "test4",
-        "test5"
+        "test5",
+        "test6"
     ];
     private username: string = "user";
     private aiName: string = "ai";
@@ -92,18 +93,22 @@ class NameLabel extends React.Component<NameProps, {}> {
     render() {
         if(this.props.isUser)
             return (
-                <div className="userNameLabel">
-                    <button className="btn btn-primary" disabled>
-                        {this.props.name}
-                    </button>
+                <div className="nameContainer">
+                    <div className="userNameLabel">
+                        <button className="btn btn-primary nameButton" disabled>
+                            {this.props.name}
+                        </button>
+                    </div>
                 </div>
             );
         else
             return (
-                <div className="aiNameLabel">
-                    <button className="btn btn-secondary" disabled>
-                        {this.props.name}
-                    </button>
+                <div className="nameContainer">
+                    <div className="aiNameLabel">
+                        <button className="btn btn-secondary nameButton" disabled>
+                            {this.props.name}
+                        </button>
+                    </div>
                 </div>
             );
     }
@@ -115,7 +120,7 @@ class DialogBox extends React.Component<DialogProps, {}> {
         if(this.props.isUser)
             return (
                 <div className="userDialogArea">
-                    <div className="userDialogTextArea">
+                    <div className="userDialogTextArea dialogTextBox">
                         {this.props.contain}
                     </div>
                 </div>
@@ -123,7 +128,7 @@ class DialogBox extends React.Component<DialogProps, {}> {
         else
             return (
                 <div className="aiDialogArea">
-                    <div className="aiDialogTextArea">
+                    <div className="aiDialogTextArea dialogTextBox">
                         {this.props.contain}
                     </div>
                 </div>

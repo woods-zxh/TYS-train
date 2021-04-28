@@ -16,7 +16,7 @@ export interface naviState {
 
 class NavigationBar extends React.Component<{}, naviState> {
     // Assume get from backend interface
-    private steps: string[] = ["step1", "step2", "step3", "step4", "step5"];
+    private steps: string[] = ["step1", "step2", "step3", "step4", "step5", "step6"];
 
     constructor(props: {}) {
         super(props);
@@ -53,7 +53,7 @@ class NavigationBar extends React.Component<{}, naviState> {
                     <div className="col-2">
                         <div className="naviButton">
                             <button className="btn btn-primary" onClick={() => this.reset()}>
-                                <i className="bi bi-arrow-left-circle-fill"> </i> Restart
+                                <i className="bi bi-arrow-left-circle-fill"> </i>
                             </button>
                         </div>
                     </div>

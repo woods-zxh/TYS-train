@@ -1,0 +1,68 @@
+.dialogPanel {
+    /*height: 0;*/
+    /*padding-bottom: 100%;*/
+    overflow-y:hidden;
+    overflow-x:hidden;
+    height: 80vh;
+    background-image: url("./bg1.jpg");
+    background-size:cover;
+}
+
+.nameLabel {
+    position: relative;
+    top: 65%;
+}
+
+.nameButton {
+    font-weight: bold;
+    font-size: large;
+    width: 100px;
+}
+
+.nameContainer{
+    width: 100%;
+    height: fit-content;
+    padding: 0 10% 0 10%;
+}
+
+.userNameLabel {
+    position: absolute;
+    width: fit-content;
+    right: 10%;
+}
+
+.aiNameLabel {
+    position: absolute;
+    width: fit-content;
+    left: 10%;
+}
+
+.dialogBox {
+    position: relative;
+    top: 72%;
+    height: 25%;
+    padding: 0 10% 0 10%;
+}
+
+.userDialogArea {
+    height: 100%;
+    border: solid #0089A7 1px;
+    border-radius: 15px 0 15px 30px;
+    box-shadow: -7px 7px 5px #888888d7;
+    background-color: #f0f8ffd0;
+}
+
+.aiDialogArea {
+    height: 100%;
+    border: solid #2E5C6E 1px;
+    border-radius: 0 15px 30px 15px;
+    box-shadow: 7px 7px 5px #888888d7;
+    background-color: #f0f8ffd0;
+}
+
+.dialogTextBox {
+    font-size: 23px;
+    font-weight: bold;
+    padding: 10px;
+}
+

@@ -22,6 +22,7 @@
 .navigationBar {
     padding-top: 15px;
     padding-bottom: 7px;
+    background-color: #81C7D477;
     border-bottom: 5px solid transparent;
     border-image: linear-gradient(to right, #58B2DC, #0D5661);
     border-image-slice: 10;
