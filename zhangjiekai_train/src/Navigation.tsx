@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './Navigation.css';
+import EventHub from "./EventHub";
 
 export interface NaviProps {
     name: string;
@@ -9,23 +10,33 @@ export interface NaviProps {
     isSelected: boolean;
 }
 
-class NavigationBar extends React.Component {
+export interface naviState {
+    currentStep: number,
+}
+
+class NavigationBar extends React.Component<{}, naviState> {
+    // Assume get from backend interface
+    private steps: string[] = ["step1", "step2", "step3", "step4", "step5"];
+
     constructor(props: {}) {
         super(props);
         this.state = {
-            steps: ["step1", "step2", "step3", "step4", "step5"],
-            currentStep: 0,
+            currentStep: 1,
         };
+        EventHub.on("forward", this.stepMoveForward)
+    }
+
+    stepMoveForward = () => {
+        this.setState({currentStep: this.state.currentStep+1});
     }
 
     renderStep(i: number) {
-        // @ts-ignore
-        return <StepLabel isSelected={this.state.currentStep === i} name={this.state.steps[i-1]} num={i}/>;
+        return <StepLabel isSelected={this.state.currentStep === i} name={this.steps[i-1]} num={i}/>;
     }
 
     reset() {
         // Todo: reset the page
-        console.log("reset");
+        EventHub.trigger("reset");
     }
 
     render() {

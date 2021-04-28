@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './DialogPanel.css';
+import EventHub from "./EventHub";
 
 export interface DialogState {
     isUser: boolean,
@@ -41,6 +42,15 @@ class DialogPanel extends React.Component<{}, DialogState> {
             currentNum: 1,
             currentDialog: this.dialog[0],
         };
+        EventHub.on("reset", this.reset);
+    }
+
+    reset = () => {
+        this.setState({
+            isUser: true,
+            currentNum: 1,
+            currentDialog: this.dialog[0],
+        });
     }
 
     childrenClickCallback = () => {
@@ -54,6 +64,7 @@ class DialogPanel extends React.Component<{}, DialogState> {
             currentNum: this.state.currentNum+1,
             currentDialog: this.dialog[this.state.currentNum],
         });
+        EventHub.trigger("forward");
     }
 
     render() {
