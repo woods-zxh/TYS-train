@@ -1,0 +1,28 @@
+.stepSelected {
+    font-size: large;
+    font-weight: bold;
+    color: #376B6D;
+}
+
+.stepNumSelected:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    height: 3px;
+    background-color: #69B0AC;
+}
+
+.stepContainer {
+    border-left: solid #69B0AC 5px;
+}
+
+.navigationBar {
+    padding-top: 15px;
+    padding-bottom: 7px;
+    border-bottom: 5px solid transparent;
+    border-image: linear-gradient(to right, #58B2DC, #0D5661);
+    border-image-slice: 10;
+}

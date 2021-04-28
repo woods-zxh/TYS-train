@@ -30,30 +30,38 @@ class NavigationBar extends React.Component<{}, naviState> {
         this.setState({currentStep: this.state.currentStep+1});
     }
 
-    renderStep(i: number) {
-        return <StepLabel isSelected={this.state.currentStep === i} name={this.steps[i-1]} num={i}/>;
-    }
+    // renderStep(i: number) {
+    //     return <StepLabel isSelected={this.state.currentStep === i} name={this.steps[i-1]} num={i}/>;
+    // }
 
     reset() {
-        // Todo: reset the page
+        this.setState({currentStep: 1})
         EventHub.trigger("reset");
     }
 
     render() {
-        // Todo: auto render all the steps
-        return (
-            <div>
-                <div className="naviButton">
-                    <button className="btn btn-primary" onClick={() => this.reset()}>
-                        <i className="bi bi-arrow-left-circle-fill"> </i> Restart
-                    </button>
+        let stepList = this.steps.map((item, index) => {
+            return (
+                <div className="stepContainer col-sm">
+                    <StepLabel isSelected={this.state.currentStep === index+1} name={item} num={index+1}/>
                 </div>
-                <div className="navigationRow">
-                    {this.renderStep(1)}
-                    {this.renderStep(2)}
-                    {this.renderStep(3)}
-                    {this.renderStep(4)}
-                    {this.renderStep(5)}
+            );
+        })
+        return (
+            <div className="navigationBar container-fluid">
+                <div className="row">
+                    <div className="col-2">
+                        <div className="naviButton">
+                            <button className="btn btn-primary" onClick={() => this.reset()}>
+                                <i className="bi bi-arrow-left-circle-fill"> </i> Restart
+                            </button>
+                        </div>
+                    </div>
+                    <div className="col-10">
+                        <div className="navigationRow row">
+                            {stepList}
+                        </div>
+                    </div>
                 </div>
             </div>
         )
@@ -66,16 +74,16 @@ class StepLabel extends React.Component<NaviProps, {}> {
         if(this.props.isSelected)
             // Todo: change style when selected
             return (
-                <div className="stepSelected">
-                    <div className="stepNumSelected">{this.props.num}</div>
-                    <div className="stepNameSelected">{this.props.name}</div>
+                <div className="stepSelected row">
+                    <div className="stepNumSelected col-2">{this.props.num}</div>
+                    <div className="stepNameSelected col-10">{this.props.name}</div>
                 </div>
             );
         else
             return (
-                <div className="step">
-                    <div className="stepNum">{this.props.num}</div>
-                    <div className="stepName">{this.props.name}</div>
+                <div className="step row">
+                    <div className="stepNum col-2">{this.props.num}</div>
+                    <div className="stepName col-10">{this.props.name}</div>
                 </div>
             );
     }
