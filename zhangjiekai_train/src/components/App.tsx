@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import '../style/App.css';
 import NavigationBar from './Navigation'
 import DialogPanel from './DialogPanel'
 

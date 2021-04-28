@@ -1,8 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import './Navigation.css';
-import EventHub from "./EventHub";
+import '../style/Navigation.css';
+import EventHub from "../utils/EventHub";
 
 export interface NaviProps {
     name: string;

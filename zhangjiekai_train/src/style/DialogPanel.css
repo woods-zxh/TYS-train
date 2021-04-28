@@ -4,7 +4,7 @@
     overflow-y:hidden;
     overflow-x:hidden;
     height: 80vh;
-    background-image: url("./bg1.jpg");
+    background-image: url("../assets/bg1.jpg");
     background-size:cover;
 }
 
